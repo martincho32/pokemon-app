@@ -105,26 +105,10 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
   );
 };
 
-// You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
-
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const pokemons151 = [...Array(151)].map((value, index) => `${index + 1}`);
 
   return {
-    // paths: [
-    //   {
-    //     params: { id: '1'}
-    //   },
-    //   {
-    //     params: { id: '2'}
-    //   },
-    //   {
-    //     params: { id: '3'}
-    //   },
-    //   {
-    //     params: { id: '4'}
-    //   }
-    // ],
     paths: pokemons151.map((id) => ({
       params: { id },
     })),
